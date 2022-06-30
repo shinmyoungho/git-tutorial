@@ -13,8 +13,8 @@ int main(void)
 	{
 		sum = 0;
 		count = 1;;
-		scanf_s("%s", st, sizeof(st));                    //¾¯ÆÞ
-		for (int j = 0; j < strlen(st); j++)
+		scanf_s("%s", st, sizeof(st));        //string.h 
+		for (int j = 0; j < strlen(st); j++)  //strlen(st);
 		{
 			if (st[j] == 'O')
 			{
