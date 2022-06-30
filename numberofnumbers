@@ -1,0 +1,65 @@
+#include<stdio.h>
+
+int main(void)
+{
+	int a[3];
+	int b[20];
+	int k = 0;
+	for ( int i = 0; i < 3; i++)
+	{
+		scanf_s("%d", &a[i]);
+	}
+	int sum = a[0] * a[1] * a[2];
+	for ( int i = 1; i < sum; i = i * 10)      // 곱한 값의 각 자릿수에 대해 0~9까지 나온 값을 출력하는 문제
+	{										   // ex) sum == 123456789     1 1개 2 1개 3한개 이런식으로										
+											   // 쉬운줄 알았는데 아는게 없다보니 노가다로 풀었다 이게 맞나;;
+		b[k] = (sum / i) % 10;			       // 백준 2577번 어거지로 맞췄다.. 난 줫밥이다..
+		k++;
+	}
+	b[k] = 100;
+	int n = 0;
+	int c[] = {0,0,0,0,0,0,0,0,0,0};
+	while (b[n] != 100)
+	{
+		switch (b[n])
+		{
+		case 0: 
+			c[0]++;
+			break;
+		case 1:
+			c[1]++;
+			break;
+		case 2:
+			c[2]++;
+			break;
+		case 3:
+			c[3]++;
+			break;
+		case 4:
+			c[4]++;
+			break;
+		case 5:
+			c[5]++;
+			break;
+		case 6:
+			c[6]++;
+			break;
+		case 7:
+			c[7]++;
+			break;
+		case 8:
+			c[8]++;
+			break;
+		default:
+			c[9]++;
+			break;
+		}
+		n++;
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d\n", c[i]);
+		
+	}
+	return 0;
+}
